@@ -47,7 +47,7 @@
 							<h1>cool dude headphone</h1>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, odit? Nobis beatae velit vero delectus odit mollitia quibusdam quae nemo?</p>
 							<h1>$430</h1>
-							<div class="btn btn-warning">Buy Now</div>
+							<div class="btn btn-warning  button">Buy Now</div>
 						</div>
 						<div class="col-lg-5">
 							<img src="images/banner-images/headphone.png" class="d-block w-100" alt="...">
@@ -60,7 +60,7 @@
 							<h1>Android smart tv</h1>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, odit? Nobis beatae velit vero delectus odit mollitia quibusdam quae nemo?</p>
 							<h1>$4430</h1>
-							<div class="btn btn-warning">Buy Now</div>
+							<div class="btn btn-warning button">Buy Now</div>
 						</div>
 						<div class="col-lg-5">
 							<img src="images/banner-images/tv.png" class="d-block w-100" alt="...">
@@ -73,7 +73,7 @@
 							<h1>X-box for living room</h1>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, odit? Nobis beatae velit vero delectus odit mollitia quibusdam quae nemo?</p>
 							<h1>$770</h1>
-							<div class="btn btn-warning">Buy Now</div>
+							<div class="btn btn-warning button">Buy Now</div>
 						</div>
 						<div class="col-lg-5">
 							<img src="images/banner-images/xbox.png" class="d-block w-100" alt="...">
@@ -133,7 +133,7 @@
 			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 			</div>
 			<div class="m-3">
-			 <div class="btn btn-warning">Buy now</div>
+			 <div class="btn btn-warning button">Buy now</div>
 			</div>
 		  </div>
 		</div>
@@ -145,7 +145,7 @@
 			  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 			</div>
 			<div class="m-3">
-				<div class=" btn btn-danger">Buy now</div>
+				<div onclick="showJs()" class=" btn btn-danger button">Buy now</div>
 			</div>
 		  </div>
 		</div>
@@ -157,7 +157,7 @@
 			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
 			</div>
 			<div class="m-3">
-			<div class="btn btn-warning">Buy now</div>
+			<div  class="btn btn-warning button">Buy now</div>
 			</div>
 		  </div>
 		</div>
@@ -166,7 +166,7 @@
 
 <!-- Bags section -->
 
-<section class="container my-5">
+<section id="backpack" class="container my-5">
 	<h2>Backpack</h2>
 	<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 		<div class="col">
@@ -177,7 +177,7 @@
 			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 			</div>
 			<div class="m-3">
-			 <div class="btn btn-warning">Buy now</div>
+			 <div class="btn btn-warning button" button>Buy now</div>
 			</div>
 		  </div>
 		</div>
@@ -189,7 +189,7 @@
 			  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 			</div>
 			<div class="m-3">
-				<div class=" btn btn-danger">Buy now</div>
+				<div class=" btn btn-danger button">Buy now</div>
 			</div>
 		  </div>
 		</div>
@@ -201,19 +201,19 @@
 			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
 			</div>
 			<div class="m-3">
-			<div class="btn btn-warning">Buy now</div>
+			<div class="btn btn-warning button">Buy now</div>
 			</div>
 		  </div>
 		</div>
 	  </div>
 </section>
 <!-- subscribe -->
-<section style="height: 300px;" class="container d-flex justify-content-center bg-info align-items-center rounded-3">
-	<div><h1>LETS STAY IN TOUCH</h1>
+<section id="subscribe"  style="height: 300px;" class="container d-flex justify-content-center bg-info align-items-center rounded-3">
+	<div><h1  >LETS STAY IN TOUCH</h1>
 		<P>	Get updates on sale ,specials  and more</P>
-		<input type="text "placeholder='your email'>
+		<input id="active" type="text "placeholder=' email'>
 		<br>
-		<div class="btn btn-warning">Submit</div>
+		<div  id="submit"  class="btn btn-warning disabled">Submit</div>
 	</div>
 </section>
 	</main>
@@ -222,6 +222,22 @@
 	</footer>
 
 	<!-- bootstrap script -->
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+	<script src="panda.js"></script>
+	<script>
+			//activate submit button
+			document.getElementById('active').addEventListener('keyup',function(event){
+			const activeSubmit=document.getElementById("submit");
+			if(event.target.value =='email'){
+				activeSubmit.classList.remove('disabled');
+			}
+			else{
+				activeSubmit.classList.add('disabled');
+			}
+		});
+		document.getElementById('subscribe').addEventListener('click',function(event){
+		event.target.classList.add('bg-warning')	});
+		
+	</script>
 </body>
 </html>
